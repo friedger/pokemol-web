@@ -72,7 +72,9 @@ const InvalidRoute = () => (
           at Pokemol.
         </p>
         <p>Example URL:</p>
-        <pre>https://pokemol.com/dao/{'{dao contract address}'}</pre>
+        <pre>
+          https://stacks-pokemol.netlify.com/dao/{'{dao contract address}'}
+        </pre>
       </div>
     </div>
     <div className="Info Daohaus">
@@ -80,7 +82,7 @@ const InvalidRoute = () => (
         <img src={DaohausLogo} alt="Daohaus" />
         <h2>Looking for a Dao?</h2>
         <p>Discover and pledge to existing Moloch daos, or Summon your own.</p>
-        <a className="BigLink" href="https://daohaus.club/">
+        <a className="BigLink" href="https://stacks-dao-haus.netlify.app/">
           Go to Daohaus ->
         </a>
         <p>
@@ -88,14 +90,6 @@ const InvalidRoute = () => (
           think there may be an issue with your dao, visit us in our Telegram
           Support Goup.
         </p>
-        <a
-          className="BigLink"
-          href="https://t.me/joinchat/IJqu9xeMfqWoLnO_kc03QA"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Telegram Support ->
-        </a>
       </div>
     </div>
   </InvalidRouteDiv>
