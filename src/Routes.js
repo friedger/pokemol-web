@@ -28,106 +28,58 @@ const Routes = (props) => {
     <>
       {isValid ? (
         <Switch>
+          <Route path="/dao/:dao/" exact component={Home} />
+          <Route path="/dao/:dao/proposals" exact component={Proposals} />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/"
-            exact
-            component={Home}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposals"
+            path="/dao/:dao/proposals/:filter"
             exact
             component={Proposals}
           />
+          <Route path="/dao/:dao/proposal/:id" exact component={Proposal} />
+          <Route path="/dao/:dao/proposal-new" exact component={ProposalNew} />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposals/:filter"
-            exact
-            component={Proposals}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal/:id"
-            exact
-            component={Proposal}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-new"
-            exact
-            component={ProposalNew}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-engine"
+            path="/dao/:dao/proposal-engine"
             exact
             component={ProposalEngine}
           />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-member"
+            path="/dao/:dao/proposal-member"
             exact
             component={NewMemberForm}
           />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-funding"
+            path="/dao/:dao/proposal-funding"
             exact
             component={FundingForm}
           />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-whitelist"
+            path="/dao/:dao/proposal-whitelist"
             exact
             component={WhitelistForm}
           />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-guildkick"
+            path="/dao/:dao/proposal-guildkick"
             exact
             component={GuildKickForm}
           />
+          <Route path="/dao/:dao/proposal-trade" exact component={TradeForm} />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-trade"
-            exact
-            component={TradeForm}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/proposal-transmutation"
+            path="/dao/:dao/proposal-transmutation"
             exact
             component={Transmutation}
           />
           <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/stats-transmutation"
+            path="/dao/:dao/stats-transmutation"
             exact
             component={Transmutation}
           />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/success"
-            exact
-            component={Success}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/members"
-            exact
-            component={Members}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/member/:id"
-            exact
-            component={Member}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/account"
-            exact
-            component={Account}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/sign-in"
-            exact
-            component={SignIn}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/sign-out"
-            exact
-            component={SignOut}
-          />
-          <Route
-            path="/dao/:dao(\b0x[0-9a-f]{10,40}\b)/rage"
-            exact
-            component={Rage}
-          />
+          <Route path="/dao/:dao/success" exact component={Success} />
+          <Route path="/dao/:dao/members" exact component={Members} />
+          <Route path="/dao/:dao/member/:id" exact component={Member} />
+          <Route path="/dao/:dao/account" exact component={Account} />
+          <Route path="/dao/:dao/sign-in" exact component={SignIn} />
+          <Route path="/dao/:dao/sign-out" exact component={SignOut} />
+          <Route path="/dao/:dao/rage" exact component={Rage} />
           <Route path="*" component={FourOhFour} />
         </Switch>
       ) : (

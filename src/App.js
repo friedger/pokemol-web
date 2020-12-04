@@ -2,9 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import { useTranslation } from 'react-i18next';
-
+import { SmartContractsApi } from '@stacks/blockchain-api-client';
 import { DaoDataContext, DaoServiceContext } from './contexts/Store';
-import { get } from './utils/Requests';
 import Routes from './Routes';
 import Header from './components/header/Header';
 import Loading from './components/shared/Loading';
@@ -15,6 +14,7 @@ import {
 } from './variables.styles';
 import { themeMap } from './themes/themes';
 
+const contractsApi = new SmartContractsApi();
 const AppDiv = styled.div`
   background-color: ${(props) => getAppBackground(props.theme)};
   min-height: 100vh;
@@ -41,7 +41,11 @@ const App = ({ client }) => {
         return false;
       }
       try {
-        const daoRes = await get(`moloch/${daoParam}`);
+        const parts = daoParam.split('.');
+        const daoRes = await contractsApi.getContractInterface({
+          contractAddress: parts[0],
+          contractName: parts[1],
+        });
         apiData = daoRes.data;
 
         if (apiData) {

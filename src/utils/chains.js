@@ -59,6 +59,24 @@ export const supportedChains = {
     transmutation_subgraph_url:
       'https://api.thegraph.com/subgraphs/name/odyssy-automaton/daohaus-transmutation-xdai',
   },
+  999: {
+    name: 'Stacks Chain',
+    short_name: 'stacks',
+    chain: 'stacks',
+    network: 'testnet',
+    chain_id: 999,
+    network_id: 1,
+    rpc_url: 'https://stacks-node-api.blockstack.org',
+    api_url: 'https://stacks-node-api.blockstack.org',
+    pokemol_url: 'https://stacks-pokemol.netlify.app',
+    subgraph_url:
+      'https://api.thegraph.com/subgraphs/name/odyssy-automaton/daohaus-xdai',
+    stats_subgraph_url:
+      'https://api.thegraph.com/subgraphs/name/odyssy-automaton/daohaus-stats-xdai',
+    factory_contract: '0x9232DeA84E91b49feF6b604EEA0455692FC27Ba8',
+    factory_v2_contract: '0x124F707B3675b5fdd6208F4483C5B6a0B9bAf316',
+    wxdai_contract: '0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d',
+  },
 };
 
 export function getChainData(chainId) {
